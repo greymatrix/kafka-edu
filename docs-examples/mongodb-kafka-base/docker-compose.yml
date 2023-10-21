@@ -73,6 +73,8 @@ services:
       - schema-registry
     hostname: rest-proxy
     container_name: rest-proxy
+    ports:
+      - "8082:8082"
     networks:
       - localnet
     environment:
@@ -85,6 +87,8 @@ services:
     image: confluentinc/cp-schema-registry:7.2.2
     hostname: schema-registry
     container_name: schema-registry
+    ports:
+      - "8081:8081"
     depends_on:
       - broker
     networks:
